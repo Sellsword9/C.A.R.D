@@ -1,6 +1,9 @@
+# C.A.R.D specific
+card
+output/
+
 # Prerequisites
 *.d
-
 # Object files
 *.o
 *.ko
