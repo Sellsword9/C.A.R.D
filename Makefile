@@ -5,7 +5,7 @@ RAN = randomizer
 CODEPATH = ./code/
 MAKEFLAGS += --silent
 OUTPUT = ./output/output.txt
-dev:
+b:
 	$(CC) $(FLAGS) -o $(TARGET) $(CODEPATH)$(TARGET).c
 	$(CC) -Ofast -o $(RAN) $(CODEPATH)$(RAN).c
 	@echo "Compiled successfully"
@@ -19,11 +19,12 @@ clean:
 run: 
 	./$(TARGET)
 
-b: dev
-r: dev run
-prepare: dev strip
+r: b run
 c: clean
-generate: dev 
+prepare: b strip
+	@echo "Prepared for release"
+generate: b
+	@echo "Starting C.A.R.D"
 	./$(RAN) | ./$(TARGET)
 check:
 	chmod +x sizecheck.sh
