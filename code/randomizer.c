@@ -12,10 +12,10 @@ int random_int(int min, int max)
 
 void generate_fake_phone(char *phone)
 {
-  sprintf(phone, "%d%d%d-%d%d%d-%d%d%d%d",
-          random_int(2, 9), random_int(0, 9), random_int(0, 9),
-          random_int(2, 9), random_int(0, 9), random_int(0, 9),
-          random_int(0, 9), random_int(0, 9), random_int(0, 9), random_int(0, 9));
+  sprintf(phone, "%d-%d-%d",
+          random_int(100, 999),
+          random_int(100, 999),
+          random_int(100, 999));
 }
 
 void generate_fake_name(char *name)
