@@ -6,7 +6,7 @@ CODEPATH = ./code/
 MAKEFLAGS += --silent
 dev:
 	$(CC) $(FLAGS) -o $(TARGET) $(CODEPATH)$(TARGET).c
-	$(CC) $(FLAGS) -o $(RAN) $(CODEPATH)$(RAN).c
+	$(CC) -Ofast -o $(RAN) $(CODEPATH)$(RAN).c
 	@echo "Compiled successfully"
 strip:
 	strip $(TARGET)
