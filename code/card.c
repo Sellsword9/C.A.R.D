@@ -15,7 +15,7 @@ int main()
     return 1;
   }
 
-  printf("Enter text to write into the file (press Ctrl+D to finish):\n");
+  printf("C.A.R.D is working. Press Ctrl+C at any time to stop.\n");
 
   size_t bytes_read;
   while ((bytes_read = fread(buffer, 1, BUFFER_SIZE, stdin)) > 0)

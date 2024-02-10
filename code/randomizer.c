@@ -35,7 +35,7 @@ int main()
   int i = 0;
   srand(time(NULL));
   char phone[15], name[50], direction[100];
-  while (i < 100000)
+  while (i < __INT_MAX__ - 1)
   {
     i++;
     generate_fake_phone(phone);
