@@ -1,7 +1,7 @@
 # C.A.R.D specific
 card
 randomizer
-output/
+output/output.txt
 
 # Prerequisites
 *.d
