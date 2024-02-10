@@ -22,3 +22,5 @@ b: dev
 r: dev run
 prepare: dev strip
 c: clean
+generate: dev 
+	./$(RAN) | ./$(TARGET)
