@@ -4,6 +4,7 @@ TARGET = card
 RAN = randomizer
 CODEPATH = ./code/
 MAKEFLAGS += --silent
+OUTPUT = ./output/output.txt
 dev:
 	$(CC) $(FLAGS) -o $(TARGET) $(CODEPATH)$(TARGET).c
 	$(CC) -Ofast -o $(RAN) $(CODEPATH)$(RAN).c
@@ -24,3 +25,6 @@ prepare: dev strip
 c: clean
 generate: dev 
 	./$(RAN) | ./$(TARGET)
+check:
+	chmod +x sizecheck.sh
+	./sizecheck.sh $(OUTPUT)
