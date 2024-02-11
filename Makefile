@@ -1,13 +1,12 @@
-CC = gcc
-FLAGS = -Wall -Wextra -O3
+FLAGS = -Ofast
 TARGET = card
 RAN = randomizer
 CODEPATH = ./code/
 MAKEFLAGS += --silent
 OUTPUT = ./output/output.txt
 b:
-	$(CC) $(FLAGS) -o $(TARGET) $(CODEPATH)$(TARGET).c
-	$(CC) -Ofast -o $(RAN) $(CODEPATH)$(RAN).c
+	gcc $(FLAGS) -o $(TARGET) $(CODEPATH)$(TARGET).c
+	gcc -Ofast -o $(RAN) $(CODEPATH)$(RAN).c
 	@echo "Compiled successfully"
 strip:
 	strip $(TARGET) && strip $(RAN)
@@ -17,9 +16,7 @@ uninstall:
 	rm -f $(TARGET)
 	rm -f $(RAN)
 c: clean uninstall
-prepare: b strip
-	@echo "Prepared for release"
-generate: b
+generate: b strip
 	@echo "Starting C.A.R.D"
 	./$(RAN) | ./$(TARGET)
 check:
