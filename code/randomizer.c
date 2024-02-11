@@ -4,7 +4,7 @@
 char *first_names[] = {"John", "Jane", "Michael", "Emily", "David", "Sarah", "James", "Mary", "Robert", "Jennifer"};
 char *last_names[] = {"Smith", "Johnson", "Williams", "Jones", "Brown", "Davis", "Miller", "Wilson", "Moore", "Taylor"};
 char *streets[] = {"Main St", "Elm St", "Oak St", "Maple Ave", "Cedar Ln", "Pine St", "Washington St", "Lake Rd", "Park Ave", "Sunset Blvd"};
-unsigned int xorshift_state = 123456789;
+unsigned int xorshift_state;
 
 void set_seed(unsigned int seed)
 {
@@ -47,7 +47,7 @@ void generate_fake_direction(char *direction)
 int main()
 {
   int i = 0;
-  srand(time(NULL));
+  set_seed(time(NULL));
   char phone[15], name[50], direction[100];
   while (i < __INT_MAX__ - 1)
   {
