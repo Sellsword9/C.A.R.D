@@ -10,8 +10,7 @@ b:
 	$(CC) -Ofast -o $(RAN) $(CODEPATH)$(RAN).c
 	@echo "Compiled successfully"
 strip:
-	strip $(TARGET)
-	strip $(RAN)
+	strip $(TARGET) && strip $(RAN)
 clean:
 	rm -f output/output.txt
 uninstall:
