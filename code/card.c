@@ -33,3 +33,6 @@ int main()
 
   return 0;
 }
+// C.A.R.D
+// This file simply takes stdin and writes it to output
+// To run without Makefile: ./randomizer | ./card

@@ -61,3 +61,6 @@ int main()
   }
   return 0;
 }
+// C.A.R.D
+// This file generates data. Make it's the one that correlates it with the writer
+// To run without Makefile: ./randomizer | ./card

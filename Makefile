@@ -12,12 +12,10 @@ strip:
 	strip $(TARGET) && strip $(RAN)
 clean:
 	rm -f output/output.txt
-uninstall:
+c: clean
 	rm -f $(TARGET)
 	rm -f $(RAN)
-c: clean uninstall
 generate: b strip
-	@echo "Starting C.A.R.D"
 	./$(RAN) | ./$(TARGET)
 check:
 	chmod +x sizecheck.sh
