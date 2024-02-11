@@ -13,14 +13,11 @@ strip:
 	strip $(TARGET)
 	strip $(RAN)
 clean:
+	rm -f output/output.txt
+uninstall:
 	rm -f $(TARGET)
 	rm -f $(RAN)
-	rm -f output/output.txt
-run: 
-	./$(TARGET)
-
-r: b run
-c: clean
+c: clean uninstall
 prepare: b strip
 	@echo "Prepared for release"
 generate: b
