@@ -6,12 +6,12 @@ char *last_names[] = {"Smith", "Johnson", "Williams", "Jones", "Brown", "Davis",
 char *streets[] = {"Main St", "Elm St", "Oak St", "Maple Ave", "Cedar Ln", "Pine St", "Washington St", "Lake Rd", "Park Ave", "Sunset Blvd"};
 unsigned int xorshift_state;
 
-void set_seed(unsigned int seed)
+static inline void set_seed(unsigned int seed)
 {
   xorshift_state = seed;
 }
 
-unsigned int xorshift32()
+static inline unsigned int xorshift32()
 {
   xorshift_state ^= xorshift_state << 13;
   xorshift_state ^= xorshift_state >> 17;
@@ -19,12 +19,12 @@ unsigned int xorshift32()
   return xorshift_state;
 }
 
-int random_int(int min, int max)
+static inline int random_int(int min, int max)
 {
   unsigned int range = (unsigned int)(max - min + 1);
   return (int)(min + xorshift32() % range);
 }
-void generate_fake_phone(char *phone)
+static inline void generate_fake_phone(char *phone)
 {
   sprintf(phone, "%d-%d-%d",
           random_int(100, 999),
@@ -32,12 +32,12 @@ void generate_fake_phone(char *phone)
           random_int(100, 999));
 }
 
-void generate_fake_name(char *name)
+static inline void generate_fake_name(char *name)
 {
   sprintf(name, "%s %s", first_names[random_int(0, 9)], last_names[random_int(0, 9)]);
 }
 
-void generate_fake_direction(char *direction)
+static inline void generate_fake_direction(char *direction)
 {
   sprintf(direction, "%d %s, %s, %s",
           random_int(100, 9999), streets[random_int(0, 9)],
