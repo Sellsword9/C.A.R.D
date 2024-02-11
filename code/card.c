@@ -18,9 +18,13 @@ int main()
   printf("C.A.R.D is working. Press Ctrl+C at any time to stop.\n");
 
   size_t bytes_read;
+  long long count = 0;
   while ((bytes_read = fread(buffer, 1, BUFFER_SIZE, stdin)) > 0)
   {
     fwrite(buffer, 1, bytes_read, file);
+    count += bytes_read;
+    printf("\033[H\033[J");
+    printf("Megabytes written: %lld \nStop at any time by pressing Ctrl+C\n", count / 1000000);
   }
 
   printf("Text successfully written to file.\n");
