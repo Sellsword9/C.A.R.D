@@ -12,7 +12,6 @@ strip:
 	strip $(TARGET) && strip $(RAN)
 clean:
 	rm -f output/output.txt
-c: clean
 	rm -f $(TARGET)
 	rm -f $(RAN)
 generate: b strip
